@@ -4,28 +4,7 @@ function Result() {
     var ToCurrency = $("#tocurrency option:selected").text();
     var exchangerate = Exchangerate(FromCurrency,ToCurrency);
     var result =ConvertMoney(Money,FromCurrency,ToCurrency,exchangerate);
-    switch (ToCurrency) {
-        case "VND":
-        {
-            document.getElementById("result").innerHTML = result + " VND";
-            break;
-        }
-        case "USD":
-        {
-            document.getElementById("result").innerHTML = result + " USD";
-            break;
-        }
-        case "EUR":
-        {
-            document.getElementById("result").innerHTML = result + " EUR";
-            break;
-        }
-        case "GBP":
-        {
-            document.getElementById("result").innerHTML = result + " GBP";
-            break;
-        }
-    }
+    document.getElementById("result").innerHTML = result + " "+ToCurrency;
 }
 function ConvertMoney(Amount,FromCurrency,ToCurrency,ExchangeRate) {
     var Money;
